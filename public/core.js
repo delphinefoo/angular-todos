@@ -24,8 +24,9 @@ var myTodo = angular.module('myTodo', [])
       });
   };
 
-  $scope.deleteTodo = function() {
-    $http.delete('api/todos' + id)
+  $scope.deleteTodo = function(id) {
+
+    $http.delete('api/todos/' + id)
       .success(function(data) {
         $scope.todos = data;
         console.log(data);

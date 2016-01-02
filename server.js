@@ -48,17 +48,17 @@ app.post('/api/todos', function(req, res) {
 
 app.delete('/api/todos/:todo_id', function(req, res) {
   Todo.remove({
-    id: req.params.todo_id
+    _id: req.params.todo_id
   }, function(err, todo) {
     if (err) {
       res.send(err);
     }
-    /*Todo.find(function(err, todos) {
+    Todo.find(function(err, todos) {
       if (err) {
         res.send(err);
       }
       res.json(todos);
-    });*/
+    });
   });
 });
 
